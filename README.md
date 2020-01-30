@@ -8,3 +8,4 @@
 4. [Graphing our images in Matplotlib](https://pythonprogramming.net/graphing-images-matplotlib/?completed=/more-pixel-arrays/)
 5. [Thresholding](https://pythonprogramming.net/image-thresholding-python/?completed=/graphing-images-matplotlib/)
 6. [Thresholding Function](https://pythonprogramming.net/thresholding-python-function/?completed=/image-thresholding-python/)
+7. [Thresholding Logic](https://pythonprogramming.net/automated-image-thresholding-python/?completed=/thresholding-python-function/)
