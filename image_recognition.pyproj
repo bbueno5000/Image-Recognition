@@ -22,9 +22,7 @@
     <InterpreterReference Include="CondaEnv|CondaEnv|image_recognition_env" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\module1.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="src\image_recognition.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
