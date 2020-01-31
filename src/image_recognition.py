@@ -1,9 +1,9 @@
 """
 DOCSTRING
 """
+from collections import Counter
 from statistics import mean
 from PIL import Image
-import matplotlib.pyplot as pyplot
 import numpy
 
 def create_examples():
@@ -54,27 +54,35 @@ def threshold(image_array):
                 each_pixel[3] = 255
     return new_array
 
+def what_number_is_this(filepath):
+    """
+    DOCSTRING
+    """
+    matched_array = []
+    load_examples = open('data/number_array_examples.txt', 'r').read()
+    load_examples = load_examples.split('\n')
+    image = Image.open(filepath)
+    image_array = numpy.array(image)
+    image_array_list = image_array.tolist()
+    in_question = str(image_array_list)
+    for each_example in load_examples:
+        try:
+            split_example = each_example.split('::')
+            current_number = split_example[0]
+            current_array = split_example[1]
+            each_pixel_in_example = current_array.split('],')
+            each_pixel_in_question = in_question.split('],')
+            x_variable = 0
+            while x_variable < len(each_pixel_in_example):
+                if each_pixel_in_example[x_variable] == each_pixel_in_question[x_variable]:
+                    matched_array.append(int(current_number))
+                x_variable += 1
+        except Exception as exception:
+            print(str(exception))
+    print(matched_array)
+    x_variable = Counter(matched_array)
+    print(x_variable)
+    print(x_variable[0])
+
 if __name__ == '__main__':
-    #IMAGE_1 = Image.open('images/numbers/0.1.png')
-    #IMAGE_ARRAY_1 = numpy.array(IMAGE_1)
-    #IMAGE_2 = Image.open('images/numbers/y0.4.png')
-    #IMAGE_ARRAY_2 = numpy.array(IMAGE_2)
-    #IMAGE_3 = Image.open('images/numbers/y0.5.png')
-    #IMAGE_ARRAY_3 = numpy.array(IMAGE_3)
-    #IMAGE_4 = Image.open('images/sentdex.png')
-    #IMAGE_ARRAY_4 = numpy.array(IMAGE_4)
-    #IMAGE_ARRAY_1 = threshold(IMAGE_ARRAY_1)
-    #IMAGE_ARRAY_2 = threshold(IMAGE_ARRAY_2)
-    #IMAGE_ARRAY_3 = threshold(IMAGE_ARRAY_3)
-    #IMAGE_ARRAY_4 = threshold(IMAGE_ARRAY_4)
-    #FIGURE = pyplot.figure()
-    #AXIS_1 = pyplot.subplot2grid((8, 6), (0, 0), rowspan=4, colspan=3)
-    #AXIS_2 = pyplot.subplot2grid((8, 6), (4, 0), rowspan=4, colspan=3)
-    #AXIS_3 = pyplot.subplot2grid((8, 6), (0, 3), rowspan=4, colspan=3)
-    #AXIS_4 = pyplot.subplot2grid((8, 6), (4, 3), rowspan=4, colspan=3)
-    #AXIS_1.imshow(IMAGE_ARRAY_1)
-    #AXIS_2.imshow(IMAGE_ARRAY_2)
-    #AXIS_3.imshow(IMAGE_ARRAY_3)
-    #AXIS_4.imshow(IMAGE_ARRAY_4)
-    #pyplot.show()
-    create_examples()
+    what_number_is_this('images/numbers/3.1.png')
