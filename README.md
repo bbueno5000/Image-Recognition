@@ -9,3 +9,4 @@
 5. [Thresholding](https://pythonprogramming.net/image-thresholding-python/?completed=/graphing-images-matplotlib/)
 6. [Thresholding Function](https://pythonprogramming.net/thresholding-python-function/?completed=/image-thresholding-python/)
 7. [Thresholding Logic](https://pythonprogramming.net/automated-image-thresholding-python/?completed=/thresholding-python-function/)
+8. [Saving our Data For Training and Testing](https://pythonprogramming.net/saving-image-data/?completed=/automated-image-thresholding-python/)
