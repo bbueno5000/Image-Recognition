@@ -3,8 +3,12 @@ DOCSTRING
 """
 from collections import Counter
 from statistics import mean
-from PIL import Image
+from matplotlib import style
+from matplotlib import pyplot
 import numpy
+from PIL import Image
+
+style.use("ggplot")
 
 def create_examples():
     """
@@ -83,6 +87,19 @@ def what_number_is_this(filepath):
     x_variable = Counter(matched_array)
     print(x_variable)
     print(x_variable[0])
+    graph_x = []
+    graph_y = []
+    for each_thing in x_variable:
+        graph_x.append(each_thing)
+        graph_y.append(x_variable[each_thing])
+    axis_1 = pyplot.subplot2grid((4, 4), (0, 0), rowspan=1, colspan=4)
+    axis_2 = pyplot.subplot2grid((4, 4), (1, 0), rowspan=3, colspan=4)
+    axis_1.imshow(image_array)
+    axis_2.bar(graph_x, graph_y, align='center')
+    pyplot.ylim(400)
+    x_location = pyplot.MaxNLocator(12)
+    axis_2.xaxis.set_major_locator(x_location)
+    pyplot.show()
 
 if __name__ == '__main__':
     what_number_is_this('images/numbers/3.1.png')

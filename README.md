@@ -11,3 +11,4 @@
 7. [Thresholding Logic](https://pythonprogramming.net/automated-image-thresholding-python/?completed=/thresholding-python-function/)
 8. [Saving our Data For Training and Testing](https://pythonprogramming.net/saving-image-data/?completed=/automated-image-thresholding-python/)
 9. [Basic Testing](https://pythonprogramming.net/basic-image-recognition-testing/?completed=/saving-image-data/)
+10. [Testing, visualization, and moving forward](https://pythonprogramming.net/testing-visualization-and-conclusion/?completed=/basic-image-recognition-testing/)
